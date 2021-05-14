@@ -1,0 +1,24 @@
+{
+	"TodoLista": [
+		{
+			"idProv": "42",
+			"denoProv": "CHIETI",
+			"istatP": "069"
+		},
+		{
+			"idProv": "44",
+			"denoProv": "L`AQUILA",
+			"istatP": "066"
+		},
+		{
+			"idProv": "43",
+			"denoProv": "PESCARA",
+			"istatP": "068"
+		},
+		{
+			"idProv": "41",
+			"denoProv": "TERAMO",
+			"istatP": "067"
+		}
+	]
+}

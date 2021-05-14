@@ -1,0 +1,52 @@
+{
+    "TodoLista": [{
+            "idLayer": "1",
+            "nome": "OSM",
+            "descrizione": "OSM",
+            "url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php",
+            "visible": true
+        },
+        {
+            "idLayer": "2",
+            "nome": "CP.CadastralParcel",
+            "descrizione": "Particelle",
+            "url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php",
+            "visible": false
+        },
+        {
+            "idLayer": "3",
+            "nome": "province",
+            "descrizione": "Province",
+            "url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php",
+            "visible": false
+        },
+        {
+            "idLayer": "4",
+            "nome": "CP.CadastralZoning",
+            "descrizione": "Fogli",
+            "url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php",
+            "visible": false
+        },
+        {
+            "idLayer": "6",
+            "nome": "fabbricati",
+            "descrizione": "Fabbricati",
+            "url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php",
+            "visible": false
+        },
+        {
+            "idLayer": "7",
+            "nome": "vestizioni",
+            "descrizione": "Vestizioni",
+            "url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php",
+            "visible": false
+        },
+        {
+            "idLayer": "8",
+            "nome": "Incendi",
+            "descrizione": "Incendi",
+            "url": "",
+            "visible": false
+        }
+    ]
+}
