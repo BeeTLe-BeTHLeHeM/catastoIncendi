@@ -1,27 +1,34 @@
-# AngularProva
+# Catasto Incendi
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.9.
+Progetto per demo.
 
-## Development server
+Piattaforma di test per Angular 11.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Strumenti Essenziali
 
-## Code scaffolding
+1. **NodeJS**
+    - Installare da https://nodejs.org/
+	- Verificare installazione  
+        > node -v
+2. **NPM**
+    - Aggiornare all'ultima versione
+        > npm install -g npm
+    - Verificare installazione
+        > npm -v
+3. **Angular CLI**
+    - Aggiornare all'ultima versione
+        > npm install -g @angular/cli
+    - Verificare installazione
+        > ng v
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Preparazione Progetto
 
-## Build
+1. Clonare il progetto da GitHub:
+    > git clone https://github.com/BeeTLe-BeTHLeHeM/catastoIncendi.git
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+2. Creazione e caricamento di tutti i package richiesti (cartella node_modules)
+    > npm install
 
-## Running unit tests
+3. Compilazione e avvio applicazione
+    > ng serve -o
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
