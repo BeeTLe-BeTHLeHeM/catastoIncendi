@@ -129,6 +129,9 @@ export class MapComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  ngAfterViewInit(): void {
     this.container = document.getElementById('popup');
     this.content = document.getElementById('popup-content');
     this.closer = document.getElementById('popup-closer');
@@ -141,18 +144,22 @@ export class MapComponent implements OnInit {
       }
     });
 
+    this.closer.onclick = function() {
+      console.log('closer: popup', this.popup);
+      // this.popup.setPosition(undefined);
+      // this.closer.blur();
+      // this.mostraGeoCoding = false;
+      $('#popup').hide();
+      console.log('mostraGeoCoding', this.mostraGeoCoding);
+      return true;
+    };
+
     proj4.defs('EPSG:6706', '+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs');
     register(proj4);
 
     this.layers = [];
 
     let layer = null;
-
-    this.closer.onclick = function() {
-      this.popup.setPosition(undefined);
-      this.closer.blur();
-      return false;
-    };
 
     /*
     $('#test').on('click', function() {
@@ -344,11 +351,15 @@ export class MapComponent implements OnInit {
     /* this.source.on('addfeature', function(event:any) { }); */
 
     this.geocoder.on('addresschosen', (evt: any) => {
-      console.log('addresschosen', evt);
+      const feature = evt.feature;
+      this.geocoder.getSource().clear();
+      this.geocoder.getSource().addFeature(feature);
+
       window.setTimeout( () => {
         this.content.innerHTML = evt.address.formatted;
         this.popup.setPosition(evt.coordinate);
-      }, 3000);
+        $('#popup').show();
+      }, 1000);
     });
 
     this.drawPolygon.on('drawstart', (event: any) => {
