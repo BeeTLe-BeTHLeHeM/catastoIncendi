@@ -343,7 +343,7 @@ export class MapComponent implements OnInit {
     this.drawPoint = new Draw({ source: this.source, type: GeometryType.POINT });
     this.drawLine = new Draw({ source: this.source, type: GeometryType.LINE_STRING });
     this.drawPolygon = new Draw({ source: this.source, type: GeometryType.POLYGON });
-
+/*LAZIO MERDA*/
     this.map.addLayer(this.vector);
 
     this.createMeasureTooltip();
