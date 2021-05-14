@@ -1,0 +1,21 @@
+<div id="map" class="map">
+    <app-toolbar (toolbarChanged)="toolbarAction($event)" (toggleInfoChanged)="toggleInfo($event)" class="toolbar"></app-toolbar>
+    <!-- <button (click)="attivaListaLayer()" class="listalayerbutton">Lista Layer</button> -->
+    <button mat-raised-button class="listalayerbutton" title="Lista Layers" (click)="attivaListaLayer()">	<mat-icon>menu</mat-icon></button>
+
+
+    <!--<button id="test">Click!</button>-->
+
+    <div id="info" cdkDrag></div>
+
+    <div id="spinner" [hidden]="!mostraSpinner">
+        <mat-spinner></mat-spinner>
+    </div>
+
+    <div id="popup" class="ol-popup">
+        <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+        <div id="popup-content"></div>
+    </div>
+</div>
+
+<app-lista-layer id="listaLayerDiv" class="listaLayer" (layerVisibleChanged)="visibilityHandler($event)"></app-lista-layer>

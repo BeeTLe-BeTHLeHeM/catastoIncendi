@@ -1,0 +1,260 @@
+import { Component, OnInit } from '@angular/core';
+
+import 'ol/ol.css';
+import ImageLayer from 'ol/layer/Image';
+import ImageWMS from 'ol/source/ImageWMS';
+import Map from 'ol/Map';
+import Projection from 'ol/proj/Projection';
+import View from 'ol/View';
+import proj4 from 'proj4';
+import {ScaleLine, defaults as defaultControls} from 'ol/control';
+import {fromLonLat} from 'ol/proj';
+import {register} from 'ol/proj/proj4';
+import { OSM, Vector as VectorSource } from 'ol/source';
+import {Tile as TileLayer, Vector as VectorLayer} from 'ol/layer';
+import TileWMS from 'ol/source/TileWMS';
+import { CommonService } from '../common.service';
+import Draw from 'ol/interaction/Draw';
+import GeometryType from 'ol/geom/GeometryType';
+//import * as turf from '@turf/turf';
+import turfLength from '@turf/length';
+import GeoJSON from 'ol/format/GeoJSON';
+
+class Visibility {
+  nomeLayer: string;
+  visible: boolean;
+
+  constructor() {
+    this.nomeLayer = "";
+    this.visible = false;
+  }
+}
+
+@Component({
+  selector: 'app-map',
+  templateUrl: './map.component.html',
+  styleUrls: ['./map.component.css']
+})
+export class MapComponent implements OnInit {
+
+  map: any;
+  source: any;
+  vector: any;
+
+  listaLayerStato = false;
+
+  drawPoint!: Draw;
+  drawLine!: Draw;
+  drawPolygon!: Draw;
+
+  common: CommonService;
+
+  constructor(common: CommonService) {
+    this.common = common;
+  }
+
+  projection: Projection = new Projection({
+    code: 'EPSG:6706',
+    extent: [6.53, 36.76,
+      20.99, 50.1 ]
+  });
+
+  layers: any = [];
+
+  ngOnInit(): void {
+    proj4.defs("EPSG:6706","+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs");
+
+    register(proj4);
+
+    this.layers = [];
+
+    var layer = null;
+
+    layer = new TileLayer({
+        visible: true,
+        source: new OSM()
+      });
+    layer.set('name', 'OSM');
+    this.layers.push(layer);
+
+    layer = new TileLayer({
+        extent: this.projection.getExtent(),
+        visible: false,
+        source: new TileWMS({
+          url: 'https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php',
+          params: { 
+            'LAYERS': 'province',
+            'VERSION': '1.1.1'
+          },
+          serverType: 'mapserver',
+          // Countries have transparency, so do not fade tiles:
+          transition: 0
+        })
+      });
+    layer.set('name', 'province');
+    this.layers.push(layer);
+
+      //
+
+    layer = new TileLayer({
+        extent: this.projection.getExtent(),
+        visible: false,
+        source: new TileWMS({
+          url: 'https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php',
+          params: { 
+            'LAYERS': 'fabbricati', 
+            'VERSION': '1.1.1'
+          },
+          serverType: 'mapserver',
+          transition: 0
+        })
+      });
+    layer.set('name', 'fabbricati');
+    this.layers.push(layer);
+
+    layer = new TileLayer({
+        extent: this.projection.getExtent(),
+        visible: false,
+        source: new TileWMS({
+          projection: this.projection,
+          url: 'https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php',
+          params: { 
+            'LAYERS': 'CP.CadastralParcel',
+            'VERSION': '1.1.1'
+          },
+          serverType: 'mapserver',
+          transition: 0
+        })
+      });
+    layer.set('name', 'CP.CadastralParcel');
+    this.layers.push(layer);
+  
+    layer = new TileLayer({
+        extent: this.projection.getExtent(),
+        visible: false,
+        source: new TileWMS({
+            url: 'https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php',
+            params: {
+                'LAYERS': 'vestizioni',
+                'VERSION':'1.1.1'
+            },
+            serverType: 'geoserver'
+        })
+      });
+    layer.set('name', 'vestizioni');
+    this.layers.push(layer);
+
+
+    layer = new TileLayer({
+        extent: this.projection.getExtent(),
+        visible: false,
+        source: new TileWMS({
+            url: 'https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php',
+            params: {
+                'LAYERS': 'CP.CadastralZoning',
+                'VERSION':'1.1.1'
+            },
+            serverType: 'geoserver'
+        })
+      });
+    layer.set('name', 'CP.CadastralZoning');
+    this.layers.push(layer);
+
+    this.map = new Map({
+      controls: defaultControls().extend([new ScaleLine()]),
+      layers: this.layers,
+      target: 'map',
+      view: new View({
+        projection:  this.projection,
+        /*center: fromLonLat([8.23, 46.86], projection),*/
+        center:[parseFloat('12.41000000'),parseFloat('42.1000000')], // 6706
+        extent:   this.projection.getExtent(),
+        zoom: 2,
+      }),
+    });
+
+    //
+
+    this.source = new VectorSource({wrapX: false});
+    this.vector = new VectorLayer({ source: this.source });
+    this.vector.set('name', 'draw');
+
+    this.drawPoint = new Draw({ source: this.source, type: GeometryType.POINT });
+    this.drawLine = new Draw({ source: this.source, type: GeometryType.LINE_STRING });
+    this.drawPolygon = new Draw({ source: this.source, type: GeometryType.POLYGON });
+
+    this.map.addLayer(this.vector);
+
+    this.source.on('addfeature', function(event:any) {
+      console.log("event", event.feature.getGeometry().getCoordinates());
+/*
+      var format = new GeoJSON();
+      var feature = format.readFeature(event.feature.getGeometry().getCoordinates());
+      //var length = turfLength(feature, {units: 'miles'});
+      var length = turfLength(line, { units: 'miles'});
+*/
+    });
+
+    this.drawLine.on('drawend', function(e) {
+
+    });
+
+  }
+
+  toolbarAction(event: string) {
+    console.log("toolbar azione = " + event);
+
+    let gtype = null;
+
+    if (event === 'Point') {
+      this.map.removeInteraction(this.drawLine);
+      this.map.removeInteraction(this.drawPolygon);
+      this.map.addInteraction(this.drawPoint);
+
+    } else if (event === 'LineString') {
+      this.map.removeInteraction(this.drawPoint);
+      this.map.removeInteraction(this.drawPolygon);
+      this.map.addInteraction(this.drawLine);
+
+    } else if (event === 'Polygon') {
+      this.map.removeInteraction(this.drawPoint);
+      this.map.removeInteraction(this.drawLine);
+      this.map.addInteraction(this.drawPolygon);
+
+    } else if (event === 'DeleteAll') {
+      this.map.getLayers().forEach(function(el: any) {
+        if (el.get('name') === 'draw') {
+          el.getSource().clear();
+        }
+      });
+
+    } else if (event === 'Pan') {
+      this.map.removeInteraction(this.drawPoint);
+      this.map.removeInteraction(this.drawLine);
+      this.map.removeInteraction(this.drawPolygon);
+    }
+
+  }
+
+  visibilityHandler(event: Visibility) {
+    var nomeLayer = event.nomeLayer;
+    var visible = event.visible;
+
+    console.log("visibilityHandler :: " + nomeLayer + " = " + visible);
+
+    this.map.getLayers().forEach(function(el: any) {
+      console.log(el);
+      // console.log("el.get : "+el.get('name'));
+      // console.log("nomeLayer : "+nomeLayer);
+      if (el.get('name') === nomeLayer) {
+        // console.log("setVisible(" + visible + ")");
+        el.setVisible(visible);
+      }
+    })
+
+  }
+
+  attivaListaLayer() {
+    this.common.listaLayerVisible = true;
+  }
+}

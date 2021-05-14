@@ -1,0 +1,201 @@
+<div style="margin-bottom:6px;height:95%;">
+    <mat-accordion>
+        <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+                <mat-panel-title>Ricerca per annualità</mat-panel-title>
+                <mat-panel-description></mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <mat-label class="labelRicerca">Regione</mat-label>
+            <mat-select (selectionChange)="selezionaRegione($event)">
+                <mat-option *ngFor="let reg of regioni" [value]="reg.id_regi">{{reg.deno_regi}}</mat-option>
+            </mat-select>
+
+            <mat-label class="labelRicerca">Provincia</mat-label>
+            <mat-select (selectionChange)="selezionaProvincia($event)">
+                <mat-option *ngFor="let prov of province" [value]="prov.idProv">{{prov.denoProv}}</mat-option>
+            </mat-select>
+
+            <mat-label class="labelRicerca">Comune</mat-label>
+            <mat-select (selectionChange)="selezionaComune($event)">
+                <mat-option *ngFor="let comu of comuni" [value]="comu.idComune">{{comu.nome}}</mat-option>
+            </mat-select>
+
+            <mat-label class="labelRicerca">Anno</mat-label>
+            <mat-select (selectionChange)="selezionaAnno($event)">
+                <mat-option *ngFor="let anno of anni" [value]="anno">{{anno}}</mat-option>
+            </mat-select>
+            <div style="text-align: center;">
+                <button mat-raised-button color="primary" (click)="ricerca()">Ricerca</button>
+            </div>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+                <mat-panel-title>Ricerca per particella</mat-panel-title>
+                <!-- <mat-panel-description></mat-panel-description> -->
+            </mat-expansion-panel-header>
+            <mat-label class="labelRicerca">Regione</mat-label>
+            <mat-select (selectionChange)="selezionaRegione($event)">
+                <mat-option *ngFor="let reg of regioni" [value]="reg.id_regi">{{reg.deno_regi}}</mat-option>
+            </mat-select>
+
+            <mat-label class="labelRicerca">Provincia</mat-label>
+            <mat-select (selectionChange)="selezionaProvincia($event)">
+                <mat-option *ngFor="let prov of province" [value]="prov.idProv">{{prov.denoProv}}</mat-option>
+            </mat-select>
+
+            <mat-label class="labelRicerca">Comune</mat-label>
+            <mat-select (selectionChange)="selezionaComune($event)">
+                <mat-option *ngFor="let comu of comuni" [value]="comu.idComune">{{comu.nome}}</mat-option>
+            </mat-select>
+
+            <mat-label class="labelRicerca">Sezione</mat-label>
+            <mat-select (selectionChange)="selezionaSezione($event)">
+                <mat-option *ngFor="let sez of sezioni" [value]="sez.codiNazi">{{sez.codiNazi}}</mat-option>
+            </mat-select>
+
+            <mat-label class="labelRicerca">Foglio</mat-label>
+            <mat-select (selectionChange)="selezionaFoglio($event)">
+                <mat-option *ngFor="let foglio of fogli" [value]="foglio.idFoglio">{{foglio.numeroFoglio}}</mat-option>
+            </mat-select>
+
+            <mat-label class="labelRicerca">Particella</mat-label>
+            <mat-select (selectionChange)="selezionaParticella($event)">
+                <mat-option *ngFor="let part of particelle" [value]="part.idParticella">{{part.numeroParticella}}</mat-option>
+            </mat-select>
+
+            <mat-label class="labelRicerca">Anno</mat-label>
+            <mat-select (selectionChange)="selezionaAnno($event)">
+                <mat-option *ngFor="let anno of anni" [value]="anno">{{anno}}</mat-option>
+            </mat-select>
+            <div style="text-align: center;">
+                <button mat-raised-button color="primary" (click)="ricerca2()">Ricerca</button>
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>
+
+<div style="width:30%;background-color:white;overflow-y:auto;height:450px;position:fixed;">
+    <div style="text-align:center"></div>
+
+    <div [hidden]="!risultatiVisible">
+
+        <mat-accordion>
+            <mat-expansion-panel hideToggle *ngFor="let item of risultatiIncendi" (opened)="clickOpen()">
+                <mat-expansion-panel-header style="border-bottom:1px solid white;">
+                    <mat-panel-title>{{item.LOC}}</mat-panel-title>
+                    <mat-panel-description></mat-panel-description>
+                </mat-expansion-panel-header>
+                <table style="width:100%;">
+                    <tr>
+                        <td><strong>DATA_INC</strong></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><strong>METODO</strong></td>
+                        <td>{{item.METODO}}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>STRUMENTI</strong></td>
+                        <td>{{item.STRUMENTI}}</td>
+                    </tr>
+                    <tr>
+                        <td> <strong>ANNO</strong></td>
+                        <td>{{item.ANNO}}</td>
+                    </tr>
+                </table>
+                <div style="border-top:1px solid white;margin-top:2px;width:100%">
+                    LISTA PARTICELLE
+
+                    <table style="width:100%;">
+                        <tr *ngFor="let item of dettaglio">
+                            <!--
+                            <td>{{item.codi_nazi}}</td>
+                            <td>{{item.foglio}}</td>
+                            -->
+                            <td>{{item.particella}}</td>
+                            <td>{{item.sub}}</td>
+                            <td>{{item.allegato}}</td>
+                            <td>{{item.sviluppo}}</td>
+                            <td>{{item.area_inc}}</td>
+                            <td>{{item.area_part}}</td>
+                            <!-- <td><input type="radio" name="prova" value=""></td> -->
+                            <!-- <td> 
+                                <button mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+                                    <mat-icon style="color:green;font-size:40px;">arrow_right_alt</mat-icon>
+                                  </button>
+                            </td> -->
+                        </tr>
+                    </table>
+                    <div style="text-align: center;">
+                        <button mat-raised-button style="background-color: green;" (click)="visualizzaIncendio()">visualizza incendio</button>
+                    </div>
+                </div>
+            </mat-expansion-panel>
+        </mat-accordion>
+
+        <!--
+        <table mat-table [dataSource]="risultatiIncendi">
+            <ng-container matColumnDef="LOC">
+                <th mat-header-cell *matHeaderCellDef> LOC </th>
+                <td mat-cell *matCellDef="let element"> {{element.LOC}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="DATA_INC">
+                <th mat-header-cell *matHeaderCellDef> DATA_INC </th>
+                <td mat-cell *matCellDef="let element"> {{element.DATA_INC}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="METODO">
+                <th mat-header-cell *matHeaderCellDef> METODO </th>
+                <td mat-cell *matCellDef="let element"> {{element.METODO}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="STRUMENTI">
+                <th mat-header-cell *matHeaderCellDef> STRUMENTI </th>
+                <td mat-cell *matCellDef="let element"> {{element.STRUMENTI}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="ANNO">
+                <th mat-header-cell *matHeaderCellDef> ANNO </th>
+                <td mat-cell *matCellDef="let element"> {{element.ANNO}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="risultatiColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: risultatiColumns;"></tr>
+        </table>
+        -->
+    </div>
+    <mat-accordion [hidden]="!risultatiVisible2">
+        <mat-expansion-panel hideToggle (opened)="clickOpen()">
+            <mat-expansion-panel-header style="border-bottom:1px solid white;">
+                <mat-panel-title>Part num° 000250 - Foglio:13 - L'aquila</mat-panel-title>
+                <mat-panel-description></mat-panel-description>
+            </mat-expansion-panel-header>
+            <div [hidden]="!risultatiVisible2">
+                <table style="width:100%;">
+                    <tr>
+                        <th>n.°</th>
+                        <th>sub</th>
+                        <th>all.</th>
+                        <th>svil</th>
+                        <th>area inc.</th>
+                        <th>area part.</th>
+                    </tr>
+                    <tr>
+                        <td>00250</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>3552,15</td>
+                        <td>450,21</td>
+                    </tr>
+                </table>
+                <div style="text-align: center;">
+                    <button mat-raised-button style="background-color: green;" (click)="visualizzaIncendio()">visualizza incendio</button>
+                </div>
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>

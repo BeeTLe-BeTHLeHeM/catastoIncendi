@@ -1,0 +1,34 @@
+{
+	"TodoLista":[
+		{
+			"idParticella": "1",
+			"codiNazi": "B458",
+			"numeroParticella": "00240"
+		},
+		{
+			"idParticella": "2",
+			"codiNazi": "B458",
+			"numeroParticella": "00250"
+		},
+		{
+			"idParticella": "3",
+			"codiNazi": "B458",
+			"numeroParticella": "00251"
+		},
+		{
+			"idParticella": "4",
+			"codiNazi": "B458",
+			"numeroParticella": "00267"
+		},
+		{
+			"idParticella": "5",
+			"codiNazi": "B458",
+			"numeroParticella": "00758"
+		},
+		{
+			"idParticella": "6",
+			"codiNazi": "B458",
+			"numeroParticella": "00842"
+		}
+	]
+}

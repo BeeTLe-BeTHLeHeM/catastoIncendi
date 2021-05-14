@@ -1,0 +1,544 @@
+{
+	"TodoLista": [
+		{
+			"idComune": "851",
+			"codComune": "A018",
+			"nome": "ACCIANO"
+		},
+		{
+			"idComune": "4360",
+			"codComune": "A100",
+			"nome": "AIELLI"
+		},
+		{
+			"idComune": "5962",
+			"codComune": "A187",
+			"nome": "ALFEDENA"
+		},
+		{
+			"idComune": "83",
+			"codComune": "A318",
+			"nome": "ANVERSA DEGLI ABRUZZI"
+		},
+		{
+			"idComune": "6991",
+			"codComune": "A481",
+			"nome": "ATELETA"
+		},
+		{
+			"idComune": "7148",
+			"codComune": "A515",
+			"nome": "AVEZZANO"
+		},
+		{
+			"idComune": "6995",
+			"codComune": "A603",
+			"nome": "BALSORANO"
+		},
+		{
+			"idComune": "4161",
+			"codComune": "A656",
+			"nome": "BARETE"
+		},
+		{
+			"idComune": "1063",
+			"codComune": "A667",
+			"nome": "BARISCIANO"
+		},
+		{
+			"idComune": "1064",
+			"codComune": "A678",
+			"nome": "BARREA"
+		},
+		{
+			"idComune": "4366",
+			"codComune": "A884",
+			"nome": "BISEGNA"
+		},
+		{
+			"idComune": "6119",
+			"codComune": "B256",
+			"nome": "BUGNARA"
+		},
+		{
+			"idComune": "5963",
+			"codComune": "B358",
+			"nome": "CAGNANO AMITERNO"
+		},
+		{
+			"idComune": "3096",
+			"codComune": "B382",
+			"nome": "CALASCIO"
+		},
+		{
+			"idComune": "4213",
+			"codComune": "B526",
+			"nome": "CAMPO DI GIOVE"
+		},
+		{
+			"idComune": "2983",
+			"codComune": "B569",
+			"nome": "CAMPOTOSTO"
+		},
+		{
+			"idComune": "1976",
+			"codComune": "B606",
+			"nome": "CANISTRO"
+		},
+		{
+			"idComune": "5380",
+			"codComune": "B624",
+			"nome": "CANSANO"
+		},
+		{
+			"idComune": "1981",
+			"codComune": "B651",
+			"nome": "CAPESTRANO"
+		},
+		{
+			"idComune": "5012",
+			"codComune": "B656",
+			"nome": "CAPISTRELLO"
+		},
+		{
+			"idComune": "6372",
+			"codComune": "B658",
+			"nome": "CAPITIGNANO"
+		},
+		{
+			"idComune": "4762",
+			"codComune": "B672",
+			"nome": "CAPORCIANO"
+		},
+		{
+			"idComune": "6741",
+			"codComune": "B677",
+			"nome": "CAPPADOCIA"
+		},
+		{
+			"idComune": "1845",
+			"codComune": "B725",
+			"nome": "CARAPELLE CALVISIO"
+		},
+		{
+			"idComune": "1867",
+			"codComune": "B842",
+			"nome": "CARSOLI"
+		},
+		{
+			"idComune": "6935",
+			"codComune": "C083",
+			"nome": "CASTEL DEL MONTE"
+		},
+		{
+			"idComune": "1280",
+			"codComune": "C090",
+			"nome": "CASTEL DI IERI"
+		},
+		{
+			"idComune": "4829",
+			"codComune": "C096",
+			"nome": "CASTEL DI SANGRO"
+		},
+		{
+			"idComune": "585",
+			"codComune": "C126",
+			"nome": "CASTELLAFIUME"
+		},
+		{
+			"idComune": "5809",
+			"codComune": "C278",
+			"nome": "CASTELVECCHIO CALVISIO"
+		},
+		{
+			"idComune": "5810",
+			"codComune": "C279",
+			"nome": "CASTELVECCHIO SUBEQUO"
+		},
+		{
+			"idComune": "1808",
+			"codComune": "C426",
+			"nome": "CELANO"
+		},
+		{
+			"idComune": "2904",
+			"codComune": "C492",
+			"nome": "CERCHIO"
+		},
+		{
+			"idComune": "3829",
+			"codComune": "C766",
+			"nome": "CIVITA D`ANTINO"
+		},
+		{
+			"idComune": "676",
+			"codComune": "C778",
+			"nome": "CIVITELLA ALFEDENA"
+		},
+		{
+			"idComune": "6806",
+			"codComune": "C783",
+			"nome": "CIVITELLA ROVETO"
+		},
+		{
+			"idComune": "812",
+			"codComune": "C811",
+			"nome": "COCULLO"
+		},
+		{
+			"idComune": "6940",
+			"codComune": "C844",
+			"nome": "COLLARMELE"
+		},
+		{
+			"idComune": "3878",
+			"codComune": "C862",
+			"nome": "COLLELONGO"
+		},
+		{
+			"idComune": "1891",
+			"codComune": "C866",
+			"nome": "COLLEPIETRO"
+		},
+		{
+			"idComune": "5745",
+			"codComune": "C999",
+			"nome": "CORFINIO"
+		},
+		{
+			"idComune": "5481",
+			"codComune": "D465",
+			"nome": "FAGNANO ALTO"
+		},
+		{
+			"idComune": "1257",
+			"codComune": "D681",
+			"nome": "FONTECCHIO"
+		},
+		{
+			"idComune": "6348",
+			"codComune": "D736",
+			"nome": "FOSSA"
+		},
+		{
+			"idComune": "5991",
+			"codComune": "D850",
+			"nome": "GAGLIANO ATERNO"
+		},
+		{
+			"idComune": "4426",
+			"codComune": "E040",
+			"nome": "GIOIA DEI MARSI"
+		},
+		{
+			"idComune": "5448",
+			"codComune": "E096",
+			"nome": "GORIANO SICOLI"
+		},
+		{
+			"idComune": "6239",
+			"codComune": "E307",
+			"nome": "INTRODACQUA"
+		},
+		{
+			"idComune": "4813",
+			"codComune": "E505",
+			"nome": "LECCE NEI MARSI"
+		},
+		{
+			"idComune": "6425",
+			"codComune": "E723",
+			"nome": "LUCO DEI MARSI"
+		},
+		{
+			"idComune": "7016",
+			"codComune": "E724",
+			"nome": "LUCOLI"
+		},
+		{
+			"idComune": "261",
+			"codComune": "A345",
+			"nome": "L`AQUILA"
+		},
+		{
+			"idComune": "6037",
+			"codComune": "E811",
+			"nome": "MAGLIANO DE` MARSI"
+		},
+		{
+			"idComune": "4613",
+			"codComune": "F022",
+			"nome": "MASSA D`ALBE"
+		},
+		{
+			"idComune": "5943",
+			"codComune": "M255",
+			"nome": "MOLINA ATERNO"
+		},
+		{
+			"idComune": "3623",
+			"codComune": "F595",
+			"nome": "MONTEREALE"
+		},
+		{
+			"idComune": "4370",
+			"codComune": "F732",
+			"nome": "MORINO"
+		},
+		{
+			"idComune": "5323",
+			"codComune": "F852",
+			"nome": "NAVELLI"
+		},
+		{
+			"idComune": "3309",
+			"codComune": "F996",
+			"nome": "OCRE"
+		},
+		{
+			"idComune": "4329",
+			"codComune": "G002",
+			"nome": "OFENA"
+		},
+		{
+			"idComune": "3257",
+			"codComune": "G079",
+			"nome": "OPI"
+		},
+		{
+			"idComune": "1267",
+			"codComune": "G102",
+			"nome": "ORICOLA"
+		},
+		{
+			"idComune": "2432",
+			"codComune": "G142",
+			"nome": "ORTONA DEI MARSI"
+		},
+		{
+			"idComune": "1311",
+			"codComune": "G145",
+			"nome": "ORTUCCHIO"
+		},
+		{
+			"idComune": "886",
+			"codComune": "G200",
+			"nome": "OVINDOLI"
+		},
+		{
+			"idComune": "3385",
+			"codComune": "G210",
+			"nome": "PACENTRO"
+		},
+		{
+			"idComune": "340",
+			"codComune": "G449",
+			"nome": "PERETO"
+		},
+		{
+			"idComune": "7630",
+			"codComune": "G484",
+			"nome": "PESCASSEROLI"
+		},
+		{
+			"idComune": "7631",
+			"codComune": "G492",
+			"nome": "PESCINA"
+		},
+		{
+			"idComune": "4631",
+			"codComune": "G493",
+			"nome": "PESCOCOSTANZO"
+		},
+		{
+			"idComune": "3635",
+			"codComune": "G524",
+			"nome": "PETTORANO SUL GIZIO"
+		},
+		{
+			"idComune": "485",
+			"codComune": "G726",
+			"nome": "PIZZOLI"
+		},
+		{
+			"idComune": "490",
+			"codComune": "G766",
+			"nome": "POGGIO PICENZE"
+		},
+		{
+			"idComune": "4673",
+			"codComune": "G992",
+			"nome": "PRATA D`ANSIDONIA"
+		},
+		{
+			"idComune": "3686",
+			"codComune": "H007",
+			"nome": "PRATOLA PELIGNA"
+		},
+		{
+			"idComune": "2706",
+			"codComune": "H056",
+			"nome": "PREZZA"
+		},
+		{
+			"idComune": "4582",
+			"codComune": "H166",
+			"nome": "RAIANO"
+		},
+		{
+			"idComune": "4081",
+			"codComune": "H353",
+			"nome": "RIVISONDOLI"
+		},
+		{
+			"idComune": "3717",
+			"codComune": "H399",
+			"nome": "ROCCA DI BOTTE"
+		},
+		{
+			"idComune": "5733",
+			"codComune": "H400",
+			"nome": "ROCCA DI CAMBIO"
+		},
+		{
+			"idComune": "1657",
+			"codComune": "H402",
+			"nome": "ROCCA DI MEZZO"
+		},
+		{
+			"idComune": "7715",
+			"codComune": "H429",
+			"nome": "ROCCA PIA"
+		},
+		{
+			"idComune": "2730",
+			"codComune": "H389",
+			"nome": "ROCCACASALE"
+		},
+		{
+			"idComune": "2737",
+			"codComune": "H434",
+			"nome": "ROCCARASO"
+		},
+		{
+			"idComune": "6791",
+			"codComune": "H772",
+			"nome": "SAN BENEDETTO DEI MARSI"
+		},
+		{
+			"idComune": "663",
+			"codComune": "H773",
+			"nome": "SAN BENEDETTO IN PERILLIS"
+		},
+		{
+			"idComune": "7774",
+			"codComune": "H819",
+			"nome": "SAN DEMETRIO NE` VESTINI"
+		},
+		{
+			"idComune": "7807",
+			"codComune": "I121",
+			"nome": "SAN PIO DELLE CAMERE"
+		},
+		{
+			"idComune": "2569",
+			"codComune": "I389",
+			"nome": "SAN VINCENZO VALLE ROVETO"
+		},
+		{
+			"idComune": "692",
+			"codComune": "I326",
+			"nome": "SANTE MARIE"
+		},
+		{
+			"idComune": "4746",
+			"codComune": "I360",
+			"nome": "SANTO STEFANO DI SESSANIO"
+		},
+		{
+			"idComune": "2780",
+			"codComune": "I336",
+			"nome": "SANT`EUSANIO FORCONESE"
+		},
+		{
+			"idComune": "3505",
+			"codComune": "I501",
+			"nome": "SCANNO"
+		},
+		{
+			"idComune": "1421",
+			"codComune": "I543",
+			"nome": "SCONTRONE"
+		},
+		{
+			"idComune": "7513",
+			"codComune": "I546",
+			"nome": "SCOPPITO"
+		},
+		{
+			"idComune": "3508",
+			"codComune": "I553",
+			"nome": "SCURCOLA MARSICANA"
+		},
+		{
+			"idComune": "4923",
+			"codComune": "I558",
+			"nome": "SECINARO"
+		},
+		{
+			"idComune": "4749",
+			"codComune": "I804",
+			"nome": "SULMONA"
+		},
+		{
+			"idComune": "2897",
+			"codComune": "L025",
+			"nome": "TAGLIACOZZO"
+		},
+		{
+			"idComune": "1922",
+			"codComune": "L173",
+			"nome": "TIONE DEGLI ABRUZZI"
+		},
+		{
+			"idComune": "2018",
+			"codComune": "L227",
+			"nome": "TORNIMPARTE"
+		},
+		{
+			"idComune": "7671",
+			"codComune": "L334",
+			"nome": "TRASACCO"
+		},
+		{
+			"idComune": "5000",
+			"codComune": "M021",
+			"nome": "VILLA SANTA LUCIA DEGLI ABRUZZI"
+		},
+		{
+			"idComune": "3455",
+			"codComune": "M023",
+			"nome": "VILLA SANT`ANGELO"
+		},
+		{
+			"idComune": "763",
+			"codComune": "L958",
+			"nome": "VILLALAGO"
+		},
+		{
+			"idComune": "3456",
+			"codComune": "M031",
+			"nome": "VILLAVALLELONGA"
+		},
+		{
+			"idComune": "5505",
+			"codComune": "M041",
+			"nome": "VILLETTA BARREA"
+		},
+		{
+			"idComune": "4343",
+			"codComune": "M090",
+			"nome": "VITTORITO"
+		}
+	]
+}
