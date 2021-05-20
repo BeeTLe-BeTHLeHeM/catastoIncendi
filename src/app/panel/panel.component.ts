@@ -195,7 +195,7 @@ export class PanelComponent implements OnInit {
   }
 
   visualizzaIncendio(): void {
-   this.datiIncendio.emit('5'); // Sostituire con l'id dell'incendio
+   this.datiIncendio.emit('7307'); // Sostituire con l'id dell'incendio
   }
 
   ricerca2(): void {
